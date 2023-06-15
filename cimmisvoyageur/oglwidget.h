@@ -1,6 +1,5 @@
 #ifndef MYGLWIDGET_H
 #define MYGLWIDGET_H
-
 #include <QOpenGLWidget>
 #include "draw.h"
 
