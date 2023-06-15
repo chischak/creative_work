@@ -1,7 +1,6 @@
 #ifndef VERSHINA_H
 #define VERSHINA_H
 
-
 class Vertex
 {
 public:
