@@ -1,7 +1,6 @@
 #include "oglwidget.h"
 #include "vershina.h"
 #include "rebro.h"
-
 #include <QPainter>
 
 extern QVector<Vertex> vertexs;
