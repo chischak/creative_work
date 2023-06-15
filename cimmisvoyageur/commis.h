@@ -1,6 +1,5 @@
 #ifndef COMMIS_H
 #define COMMIS_H
-
 #include <QMainWindow>
 #include "oglwidget.h"
 
