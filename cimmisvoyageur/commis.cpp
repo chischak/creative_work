@@ -2,7 +2,6 @@
 #include "ui_commis.h"
 #include "vershina.h"
 #include "rebro.h"
-
 #include <QPainter>
 #include <QtMath>
 #include <QIntValidator>
@@ -86,11 +85,11 @@ void COMMIS::on_Delete_vertex_clicked()
         int del_index = del.toInt() - 1;
         if (del_index == -1)
         {
-            QMessageBox::warning(this, "Òóò êàêàÿ-òî îøèáêà!", "Íåëüçÿ îñòàâëÿòü ïîëÿ ïóñòûìè!");
+            QMessageBox::warning(this, "Ã’Ã³Ã² ÃªÃ ÃªÃ Ã¿-Ã²Ã® Ã®Ã¸Ã¨Ã¡ÃªÃ !", "ÃÃ¥Ã«Ã¼Ã§Ã¿ Ã®Ã±Ã²Ã Ã¢Ã«Ã¿Ã²Ã¼ Ã¯Ã®Ã«Ã¿ Ã¯Ã³Ã±Ã²Ã»Ã¬Ã¨!");
         }
         else if (del_index + 1 > num_vertexs)
         {
-            QMessageBox::warning(this, "Òóò êàêàÿ-òî îøèáêà!", "À âû óâåðåíû, ÷òî òàêàÿ âåðøèíà ñóùåñòâóåò?");
+            QMessageBox::warning(this, "Ã’Ã³Ã² ÃªÃ ÃªÃ Ã¿-Ã²Ã® Ã®Ã¸Ã¨Ã¡ÃªÃ !", "Ã€ Ã¢Ã» Ã³Ã¢Ã¥Ã°Ã¥Ã­Ã», Ã·Ã²Ã® Ã²Ã ÃªÃ Ã¿ Ã¢Ã¥Ã°Ã¸Ã¨Ã­Ã  Ã±Ã³Ã¹Ã¥Ã±Ã²Ã¢Ã³Ã¥Ã²?");
         }
         else
         {
@@ -143,7 +142,7 @@ void COMMIS::on_Clear_graph_clicked()
     ui->Route_result->clear();
     ui->Length_route->clear();
     openGlW->updatedraw();
-    QMessageBox::warning(this, "", "Òóò íè÷åãî íåò, âû î÷èñòèëè ïîëå!");
+    QMessageBox::warning(this, "", "Ã’Ã³Ã² Ã­Ã¨Ã·Ã¥Ã£Ã® Ã­Ã¥Ã², Ã¢Ã» Ã®Ã·Ã¨Ã±Ã²Ã¨Ã«Ã¨ Ã¯Ã®Ã«Ã¥!");
 }
 
 
@@ -162,11 +161,11 @@ void COMMIS::on_Create_edge_clicked()
 
         if (first == -1 || second == -1 || weight == 0)
         {
-            QMessageBox::warning(this, "Òóò êàêàÿ-òî îøèáêà!", "Òàêîé âåðøèíû íåò... Êàê òàê?");
+            QMessageBox::warning(this, "Ã’Ã³Ã² ÃªÃ ÃªÃ Ã¿-Ã²Ã® Ã®Ã¸Ã¨Ã¡ÃªÃ !", "Ã’Ã ÃªÃ®Ã© Ã¢Ã¥Ã°Ã¸Ã¨Ã­Ã» Ã­Ã¥Ã²... ÃŠÃ Ãª Ã²Ã Ãª?");
         }
         else if (first + 1 > num_vertexs || second + 1 > num_vertexs)
         {
-            QMessageBox::warning(this, "Òóò êàêàÿ - òî îøèáêà!", "Òàêîé âåðøèíû íåò... Êàê òàê?");
+            QMessageBox::warning(this, "Ã’Ã³Ã² ÃªÃ ÃªÃ Ã¿ - Ã²Ã® Ã®Ã¸Ã¨Ã¡ÃªÃ !", "Ã’Ã ÃªÃ®Ã© Ã¢Ã¥Ã°Ã¸Ã¨Ã­Ã» Ã­Ã¥Ã²... ÃŠÃ Ãª Ã²Ã Ãª?");
         }
         else {
             EDGE edge(vertexs[first].x, vertexs[first].y, vertexs[second].x, vertexs[second].y, weight, 0);
@@ -308,13 +307,13 @@ void COMMIS::on_Optimal_rout_clicked()
             }
         }
         ui->Route_result->setText(path);
-        QString result = "Ñàìûé êîðîòêèé ïóòü ñîñòàâëÿåò ";
+        QString result = "Ã‘Ã Ã¬Ã»Ã© ÃªÃ®Ã°Ã®Ã²ÃªÃ¨Ã© Ã¯Ã³Ã²Ã¼ Ã±Ã®Ã±Ã²Ã Ã¢Ã«Ã¿Ã¥Ã² ";
         result += QString::number(sum);
         ui->Length_route->setText(result);
     }
     catch (...)
     {
-        QMessageBox::warning(this, "Òóò êàêàÿ-òî îøèáêà!", "ß íå ìîãó âû÷èñëèòü ìàðøðóò, ïîìîãèòå õ(");
+        QMessageBox::warning(this, "Ã’Ã³Ã² ÃªÃ ÃªÃ Ã¿-Ã²Ã® Ã®Ã¸Ã¨Ã¡ÃªÃ !", "ÃŸ Ã­Ã¥ Ã¬Ã®Ã£Ã³ Ã¢Ã»Ã·Ã¨Ã±Ã«Ã¨Ã²Ã¼ Ã¬Ã Ã°Ã¸Ã°Ã³Ã², Ã¯Ã®Ã¬Ã®Ã£Ã¨Ã²Ã¥ Ãµ(");
     }
     ui->ScreenDeleteVertex->clear();
     ui->ScreenEdge1->clear();
