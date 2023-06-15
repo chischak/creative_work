@@ -1,7 +1,6 @@
 #include "commis.h"
 #include "vershina.h"
 #include "rebro.h"
-
 #include <QApplication>
 
 QVector <Vertex> vertexs;
